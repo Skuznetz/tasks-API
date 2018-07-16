@@ -7,7 +7,20 @@ const LoginPage = React.createClass({
     render(){
         return (
             <div className='LoginPage'>
-                LoginPage
+                <div className='LoginPage__banner'>
+                    <div className='LoginPage__text'>
+                        <h1>Serg task</h1>
+                        <p>123</p>
+                        <RaiseButton 
+                            className='login-button'
+                            label='Log in'
+                            onClick={this.handleLogIn} />
+
+                    </div>
+                    <img
+                        src='/img/'
+                        className='LoginPage__image' />
+                </div>
             </div>
         );
     }
