@@ -1,4 +1,5 @@
 import React from 'react';
+import './LoginPage.less';
 const LoginPage = React.createClass({
     handleLoginIn(){
         console.log('Login clicked');
