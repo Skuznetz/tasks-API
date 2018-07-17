@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
 
-// import './styles/base.less';
+import './styles/base.less';
 
 const App = React.createClass({
     render() {
