@@ -5,6 +5,9 @@ import LoginPage from './components/loginPage.jsx';
 
 
 import App from './App.jsx';
+window.handleGoogleApiLoaded = () => {
+    console.log('API loaded');
+};
 
 renderApp();
 function renderApp(){
