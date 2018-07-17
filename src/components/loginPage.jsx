@@ -1,5 +1,4 @@
 import React from 'react';
-import RaisedButton from 'material-ui/lib/raised-button';
 const LoginPage = React.createClass({
     handleLoginIn(){
         console.log('Login clicked');
@@ -11,7 +10,7 @@ const LoginPage = React.createClass({
                     <div className='LoginPage__text'>
                         <h1>Serg task</h1>
                         <p>123</p>
-                        <RaiseButton 
+                        <button 
                             className='login-button'
                             label='Log in'
                             onClick={this.handleLogIn} />

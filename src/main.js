@@ -11,7 +11,7 @@ function renderApp(){
     ReactDOM.render(
         <Router history={hashHistory}>
             <Route path='/' component={App}>
-                <Route path='/login' component={LoginPage} />
+                 <Route path='/login' component={LoginPage} /> 
             </Route>
         </Router>,
         document.getElementById('root')
