@@ -2,7 +2,7 @@ import ReactDOM from 'react-dom';
 import React from 'react';
 import { Router, Route, hashHistory } from 'react-router';
 import LoginPage from './components/loginPage.jsx';
-import api from './Api';
+import api from './API';
 
 import App from './App.jsx';
 window.handleGoogleApiLoaded = () => {
