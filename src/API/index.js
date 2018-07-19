@@ -3,6 +3,7 @@ const SCOPES = ['https://www.googleapis.com/auth/tasks', 'https://www.googleapis
 
 export default {
     authorize(params) {
+        
         return new Promise((resolve, reject) => {
             gapi.auth.authorize(
                 {
