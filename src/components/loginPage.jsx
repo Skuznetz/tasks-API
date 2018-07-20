@@ -10,6 +10,9 @@ function getStateFromFlux() {
 }
 
 const LoginPage = React.createClass({
+      getInitialState() {
+        return getStateFromFlux();
+    },
     handleLoginIn(){
         console.log('Login clicked');
     },
