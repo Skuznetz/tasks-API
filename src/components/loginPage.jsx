@@ -13,8 +13,21 @@ const LoginPage = React.createClass({
       getInitialState() {
         return getStateFromFlux();
     },
+    componentDidMount() {
+        SessionStore.addChangeListener(this._onChange);
+    },
+
+    componentWillUpdate(nextProps, nextState) {
+        if (nextState.isLoggedIn) {
+            this.contex.router.replace('/about');  
+        }
+    },
+
+    componentWillUnmount() {
+        SessionStore.removeChangeListener(this._onChange);
+    },
     handleLoginIn(){
-        console.log('Login clicked');
+                SessionActions.authorize();
     },
     render(){
         return (
@@ -35,6 +48,9 @@ const LoginPage = React.createClass({
                 </div>
             </div>
         );
+    },
+     _onChange() {
+        this.setState(getStateFromFlux());
     }
 });
 
