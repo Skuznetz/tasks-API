@@ -3,6 +3,12 @@ import React from 'react';
 import SessionStore from '../stores/SessionStore';
 import SessionActions from '../actions/SessionActions';
 import './LoginPage.less';
+function getStateFromFlux() {
+    return {
+        isLoggedIn: SessionStore.isLoggedIn()
+    };
+}
+
 const LoginPage = React.createClass({
     handleLoginIn(){
         console.log('Login clicked');
