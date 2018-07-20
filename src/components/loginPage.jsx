@@ -1,4 +1,7 @@
 import React from 'react';
+
+import SessionStore from '../stores/SessionStore';
+import SessionActions from '../actions/SessionActions';
 import './LoginPage.less';
 const LoginPage = React.createClass({
     handleLoginIn(){
