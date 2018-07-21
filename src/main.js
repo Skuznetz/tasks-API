@@ -2,6 +2,8 @@ import ReactDOM from 'react-dom';
 import React from 'react';
 import { Router, Route, hashHistory } from 'react-router';
 import LoginPage from './components/loginPage.jsx';
+import AboutPage from './components/AboutPage.jsx';
+import LoggedInLayout from './components/LoggedInLayout.jsx';
 import api from './API';
 
 import App from './App.jsx';
@@ -16,6 +18,9 @@ function renderApp(){
         <Router history={hashHistory}>
             <Route path='/' component={App}>
                  <Route path='/login' component={LoginPage} /> 
+                     <Route component={LoggedInLayout}>
+                         <Route path='/about' component={AboutPage} />
+                     </Route>
             </Route>
         </Router>,
         document.getElementById('root')
