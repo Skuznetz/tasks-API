@@ -21,7 +21,7 @@ function renderApp(){
         <Router history={hashHistory}>
             <Route path='/' component={App}>
                  <Route path='/login' component={LoginPage} /> 
-                     <Route component={LoggedInLayout}>
+                     <Route component={LoggedInLayout} onEnter={requireAuth}>
                          <Route path='/about' component={AboutPage} />
                          <Route path='/lists' component={TasklistsPage}>
                              <Route path='/lists/:id' component={TasksPage} />
@@ -31,4 +31,12 @@ function renderApp(){
         </Router>,
         document.getElementById('root')
     );
+}
+function requireAuth(nextState, replace) {
+    if (!SessionStore.isLoggedIn()) {
+        replace({
+            pathname: '/login',
+            state: { nextPathname: nextState.location.pathname }
+        });
+    }
 }
