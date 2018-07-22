@@ -1,6 +1,8 @@
 import ReactDOM from 'react-dom';
 import React from 'react';
 import { Router, Route, hashHistory } from 'react-router';
+import SessionActions from './actions/SessionActions';
+import SessionStore from './stores/SessionStore';
 import LoginPage from './components/loginPage.jsx';
 import AboutPage from './components/AboutPage.jsx';
 import LoggedInLayout from './components/LoggedInLayout.jsx';
