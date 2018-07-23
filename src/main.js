@@ -7,6 +7,8 @@ import LoginPage from './components/loginPage.jsx';
 import AboutPage from './components/AboutPage.jsx';
 import LoggedInLayout from './components/LoggedInLayout.jsx';
 import api from './API';
+import TaskPage from './components/TasksPage.jsx';
+import TasklistsPage from './components/TasklistsPage.jsx';
 
 import App from './App.jsx';
 window.handleGoogleApiLoaded = () => {
