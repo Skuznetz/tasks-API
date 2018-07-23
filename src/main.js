@@ -22,6 +22,9 @@ function renderApp(){
                  <Route path='/login' component={LoginPage} /> 
                      <Route component={LoggedInLayout}>
                          <Route path='/about' component={AboutPage} />
+                         <Route path='/lists' component={TasklistsPage}>
+                             <Route path='/lists/:id' component={TasksPage} />
+                         </Route>
                      </Route>
             </Route>
         </Router>,
