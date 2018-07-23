@@ -13,10 +13,9 @@ import TasklistsPage from './components/TasklistsPage.jsx';
 import App from './App.jsx';
 window.handleGoogleApiLoaded = () => {
     console.log('API loaded');
-    api.authorize({immediate: false});
+    SessionActions.authorize(true,renderApp);
 };
 
-renderApp();
 function renderApp(){
     ReactDOM.render(
         <Router history={hashHistory}>
