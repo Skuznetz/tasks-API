@@ -7,7 +7,11 @@ import HomeIcon from 'material-ui/lib/svg-icons/action/home';
 import ExitIcon from 'material-ui/lib/svg-icons/action/exit-to-app';
 import './TasklistsPage.less';
 
-
+function getStateFromFlux() {
+    return {
+        taskLists: TaskListsStore.getTaskLists()
+    };
+}
 
 const TasklistsPage = React.createClass({
     contextTypes: {
