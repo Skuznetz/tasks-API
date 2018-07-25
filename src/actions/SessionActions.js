@@ -1,7 +1,7 @@
 import AppDispatcher from '../dispatcher/AppDispatcher';
 import AppConstants from '../constants/AppConstants';
 
-import api from '../API';
+import api from '../api';
 
 const SessionActions = {
     authorize(immediate = false, callback) {
