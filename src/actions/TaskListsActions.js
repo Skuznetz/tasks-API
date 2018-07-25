@@ -20,3 +20,4 @@ const TaskListsActions = {
         });
     }
 };
+export default TaskListsActions;
