@@ -18,6 +18,25 @@ const TasklistsPage = React.createClass({
         router: React.PropTypes.object.isRequired
     },
 
+    getInitialState() {
+        return {
+            ...getStateFromFlux()
+            
+        };
+    },
+
+    componentWillMount() {
+        TaskListsActions.loadTaskLists();
+    },
+
+    componentDidMount() {
+        TaskListsStore.addChangeListener(this._onChange);
+    },
+
+    componentWillUnmount() {
+        TaskListsStore.removeChangeListener(this._onChange);
+    },
+
     render() {
         const { router } = this.context;
 
