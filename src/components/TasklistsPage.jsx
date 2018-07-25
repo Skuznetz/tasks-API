@@ -77,6 +77,9 @@ const TasklistsPage = React.createClass({
             </div>
         );
     },
+     _onChange() {
+        this.setState(getStateFromFlux());
+    }
 });
 
 export default TasklistsPage;
