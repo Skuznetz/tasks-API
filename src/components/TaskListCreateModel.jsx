@@ -4,7 +4,7 @@ import Dialog from 'material-ui/lib/dialog';
 import FlatButton from 'material-ui/lib/flat-button';
 import TextField from 'material-ui/lib/text-field';
 
-const TaskCreateModal = React.createClass({
+const TaskListCreateModal = React.createClass({
     getInitialState() {
         return {
             text : ''
@@ -76,4 +76,4 @@ const TaskCreateModal = React.createClass({
     }
 });
 
-export default TaskCreateModal;
+export default TaskListCreateModal;
