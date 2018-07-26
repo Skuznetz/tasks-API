@@ -76,6 +76,11 @@ const TasklistsPage = React.createClass({
                                     />
                                 )
                             }
+                             <ListItem
+                                leftIcon={<AddIcon />}
+                                primaryText="Create new list"
+                                onClick={this.handleAddTaskList}
+                            />
                         </List>
                         <Divider />
                         <List className='TasklistsPage__list'>
