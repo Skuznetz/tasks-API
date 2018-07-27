@@ -9,6 +9,7 @@ import HomeIcon from 'material-ui/lib/svg-icons/action/home';
 import ExitIcon from 'material-ui/lib/svg-icons/action/exit-to-app';
 import FolderIcon from 'material-ui/lib/svg-icons/file/folder';
 import AddIcon from 'material-ui/lib/svg-icons/content/add';
+import TaskListCreateModal from './TaskListCreateModal.jsx';
 
 
 import './TasklistsPage.less';
