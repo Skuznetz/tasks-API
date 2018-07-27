@@ -27,8 +27,9 @@ const TasklistsPage = React.createClass({
 
     getInitialState() {
         return {
-            ...getStateFromFlux()
-            
+            ...getStateFromFlux(),
+             isCreatingTaskList: false
+
         };
     },
 
