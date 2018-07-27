@@ -45,6 +45,20 @@ const TasklistsPage = React.createClass({
         TaskListsStore.removeChangeListener(this._onChange);
     },
 
+      handleAddTaskList() {
+        this.setState({ isCreatingTaskList : true });
+    },
+
+    handleClose() {
+        this.setState({ isCreatingTaskList : false });
+    },
+
+    handleTaskListSubmit(taskList) {
+        TaskListsActions.createTaskList(taskList);
+
+        this.setState({ isCreatingTaskList : false });
+    },
+
     render() {
         const { router } = this.context;
 
