@@ -12,6 +12,8 @@ import AddIcon from 'material-ui/lib/svg-icons/content/add';
 import TaskListCreateModal from './TaskListCreateModal.jsx';
 
 
+
+
 import './TasklistsPage.less';
 
 function getStateFromFlux() {
@@ -94,7 +96,7 @@ const TasklistsPage = React.createClass({
                             }
                              <ListItem
                                 leftIcon={<AddIcon />}
-                                primaryText="Create new list"
+                                primaryText="Создадим новую задачу"
                                 onClick={this.handleAddTaskList}
                             />
                         </List>
@@ -111,6 +113,11 @@ const TasklistsPage = React.createClass({
                 <div className='TasklistsPage__tasks'>
                     {this.props.children}
                 </div>
+                 <TaskListCreateModal
+                    isOpen={this.state.isCreatingTaskList}
+                    onSubmit={this.handleTaskListSubmit}
+                    onClose={this.handleClose}
+                />
             </div>
         );
     },

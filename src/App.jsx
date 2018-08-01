@@ -10,7 +10,6 @@ const App = React.createClass({
     render() {
         return (
             <div className='App'>
-                <h1>Всё</h1>
                 {this.props.children}
             </div>
         );
