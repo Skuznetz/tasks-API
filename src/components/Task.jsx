@@ -1,6 +1,6 @@
 import React from 'react';
 import Checkbox from 'material-ui/lib/checkbox';
-import './Task.less';
+// import './Task.less';
 const Task = React.createClass({
     render(){
         return (
