@@ -7,14 +7,14 @@ import TextField from 'material-ui/lib/text-field';
 const TaskListCreateModal = React.createClass({
     getInitialState() {
         return {
-            text : ''
+            name : ''
         };
     },
 
     handleClose() {
         const { onClose } = this.props;
 
-        this.setState({ text: '' });
+        this.setState({ name: '' });
 
         if (onClose) {
             onClose();
@@ -26,26 +26,26 @@ const TaskListCreateModal = React.createClass({
 
         if (onSubmit) {
             onSubmit({
-                text: this.state.text
+                name: this.state.name
             });
         }
 
-        this.setState({ text: '' });
+        this.setState({ name: '' });
     },
 
     handleTextChange(e) {
         this.setState({
-            text: e.target.value
+            name: e.target.value
         });
     },
 
     render() {
-        const { text } = this.state;
+        const { name } = this.state;
         const { isOpen } = this.props;
 
         return (
             <Dialog
-                className='TaskCreateModal'
+                className='TaskListCreateModal'
                 contentStyle={{ maxWidth: 400 }}
                 actions={[
                     <FlatButton
@@ -55,21 +55,21 @@ const TaskListCreateModal = React.createClass({
                     <FlatButton
                         primary
                         label='Submit'
-                        disabled={!text}
+                        disabled={!name}
                         onTouchTap={this.handleSubmit}
                     />
                 ]}
                 open={isOpen}
                 onRequestClose={this.handleClose}
             >
-                <h3 className='TaskCreateModal__modal-title'>Add task</h3>
+                <h3 className='TaskListCreateModal__modal-title'>Add task list</h3>
                 <TextField
                     fullWidth
                     ref={c => this.taskInput = c}
-                    value={text}
+                    value={name}
                     onChange={this.handleTextChange}
-                    hintText='e.g. buy a bottle of milk'
-                    floatingLabelText='Enter task description'
+                    hintText='e.g. movies to watch'
+                    floatingLabelText='Enter task list name'
                 />
             </Dialog>
         );
