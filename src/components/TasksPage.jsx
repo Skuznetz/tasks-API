@@ -7,7 +7,33 @@ import ContentAdd from 'material-ui/lib/svg-icons/content/add';
 import './TasksPage.less';
 import Task from './Task.jsx';
 
+
+
+function getStateFromFlux() {
+    return {
+        tasks: TasksStore.getTasks()
+    };
+}
+
 const TasksPage = React.createClass({
+    getInitialState() {
+        return {
+            ...getStateFromFlux(),
+            isCreatingTask: false
+        };
+    },
+
+    componentWillMount() {
+        TasksActions.loadTasks(this.props.params.id);
+    },
+
+    componentDidMount() {
+        TasksStore.addChangeListener(this._onChange);
+    },
+    componentWillUnmount() {
+        TasksStore.removeChangeListener(this._onChange);
+    },
+
     render() {
         return (
             <div className='TasksPage'>
@@ -20,5 +46,11 @@ const TasksPage = React.createClass({
                     </div>
                 </div>
                 <div className='TasksPage__tasks'>Tasks</div>
- </div> );}});
+ </div> 
+      );
+   },
+      _onChange() {
+        this.setState(getStateFromFlux());
+    }
+});
 export default TasksPage;
