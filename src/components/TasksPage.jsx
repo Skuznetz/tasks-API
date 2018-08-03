@@ -41,6 +41,29 @@ const TasksPage = React.createClass({
         });
     },
 
+    handleTaskUpdate(taskId, { text }) {
+        TasksActions.updateTask({
+            taskListId: this.props.params.id,
+            taskId: taskId,
+            text: text
+        });
+    },
+      handleAddTask() {
+        this.setState({ isCreatingTask : true });
+    },
+
+    handleClose() {
+        this.setState({ isCreatingTask : false });
+    },
+
+    handleTaskSubmit(task) {
+        const taskListId = this.props.params.id;
+
+        TasksActions.createTask({ taskListId, ...task });
+
+        this.setState({ isCreatingTask : false });
+    },
+
     render() {
         return (
             <div className='TasksPage'>
