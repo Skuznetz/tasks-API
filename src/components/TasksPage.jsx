@@ -52,7 +52,20 @@ const TasksPage = React.createClass({
                         </IconButton>
                     </div>
                 </div>
-                <div className='TasksPage__tasks'>Tasks</div>
+                 <div className='TasksPage__tasks'>
+                    {
+                        this.state.tasks.map(task =>
+                            <Task
+                                key={task.id}
+                                text={task.text}
+                                isCompleted={task.isCompleted}
+                                onStatusChange={this.handleStatusChange.bind(null, task.id)}
+                                onUpdate={this.handleTaskUpdate.bind(null, task.id)}
+                            />
+                        )
+                    }
+                </div>
+                
  </div> 
       );
    },
