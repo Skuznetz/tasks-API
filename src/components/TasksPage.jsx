@@ -90,9 +90,12 @@ const TasksPage = React.createClass({
                             />
                         )
                     }
-                </div>
-                
- </div> 
+                </div>   <TaskCreateModal
+                    isOpen={this.state.isCreatingTask}
+                    onSubmit={this.handleTaskSubmit}
+                    onClose={this.handleClose}
+                />
+       </div> 
       );
    },
       _onChange() {
