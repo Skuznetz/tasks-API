@@ -90,7 +90,8 @@ const TasksPage = React.createClass({
                             />
                         )
                     }
-                </div>   <TaskCreateModal
+                </div>   
+                <TaskCreateModal
                     isOpen={this.state.isCreatingTask}
                     onSubmit={this.handleTaskSubmit}
                     onClose={this.handleClose}
