@@ -48,6 +48,18 @@ export default {
             request.execute(resp => resolve(resp));
         });
     },
+
+
+    insertTask({ taskListId, title }) {
+        const request = gapi.client.tasks.tasks.insert({
+            tasklist : taskListId,
+            title    : title
+        });
+
+        return new Promise((resolve, reject) => {
+            request.execute(resp => resolve(resp));
+        });
+    },
       updateTask({ taskListId, taskId, ...params }) {
         const request = gapi.client.tasks.tasks.update({
             tasklist : taskListId,
