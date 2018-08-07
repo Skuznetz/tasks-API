@@ -33,6 +33,7 @@ const Task = React.createClass({
     handleSave() {
         this.saveTask();
     },
+
     handleCheck(){
         this.props.onStatusChange({
             isCompleted: !this.props.isCompleted
@@ -48,8 +49,15 @@ const Task = React.createClass({
             this.cancelTask();
         }
     },
-        focusInput() {
+
+    focusInput() {
         this.input.focus();
+    },
+    
+    saveTask() {
+        this.props.onUpdate({ text: this.input.value });
+
+        this.setState({ isEditing: false });
     },
 
     render(){
