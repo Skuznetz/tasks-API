@@ -51,7 +51,13 @@ const Task = React.createClass({
                   <div className='Task__text' onClick={this.handleEdit}> 
                         <div className='Task__title'>{this.props.text}</div>
                      </div> 
-                    </div>);
+
+                    <IconMenu iconButtonElement={<IconButton><MoreVertIcon /></IconButton>}>
+                        <MenuItem onClick={this.handleEdit}>Edit</MenuItem>
+                        <MenuItem>Delete</MenuItem>
+                    </IconMenu>
+                </div>
+        );
     }
 });
 export default Task;
