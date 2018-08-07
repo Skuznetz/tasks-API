@@ -2,6 +2,23 @@ import React from 'react';
 import Checkbox from 'material-ui/lib/checkbox';
 // import './Task.less';
 const Task = React.createClass({
+     getInitialState() {
+        return {
+            isEditing: false
+        };
+    },
+
+    handleEdit(e) {
+        this.setState({ isEditing: true }, this.focusInput);
+    },
+
+    handleCancel() {
+        this.cancelTask();
+    },
+
+    handleSave() {
+        this.saveTask();
+    },
     handleCheck(){
         this.props.onStatusChange({
             isCompleted: !this.props.isCompleted
