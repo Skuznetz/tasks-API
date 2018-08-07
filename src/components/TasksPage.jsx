@@ -33,9 +33,18 @@ const TasksPage = React.createClass({
     componentDidMount() {
         TasksStore.addChangeListener(this._onChange);
     },
+
+    
+    componentWillReceiveProps(nextProps) {
+        if (this.props.params.id !== nextProps.params.id) {
+            TasksActions.loadTasks(nextProps.params.id);
+        }
+    },
+
     componentWillUnmount() {
         TasksStore.removeChangeListener(this._onChange);
     },
+
       handleStatusChange(taskId, { isCompleted }) {
         TasksActions.updateTaskStatus({
             taskListId: this.props.params.id,
