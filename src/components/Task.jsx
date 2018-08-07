@@ -35,6 +35,16 @@ const Task = React.createClass({
             isCompleted: !this.props.isCompleted
         });
     },
+
+    handleKeyDown(e) {
+        if (e.keyCode === ENTER_KEY) {
+            this.saveTask();
+        }
+
+        if (e.keyCode === ESC_KEY) {
+            this.cancelTask();
+        }
+    },
     render(){
         return (
                 this.state.isEditing
