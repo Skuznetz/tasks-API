@@ -60,6 +60,10 @@ const Task = React.createClass({
         this.setState({ isEditing: false });
     },
 
+    cancelTask() {
+        this.setState({ isEditing: false });
+    },
+
     render(){
         return (
                 this.state.isEditing
