@@ -56,7 +56,7 @@ const TasksPage = React.createClass({
     },
 
     handleClose() {
-        this.setState({ isCreatingTask : false });
+       this.setState({ isCreatingTask : false });
     },
 
     handleTaskSubmit(task) {
@@ -85,8 +85,8 @@ const TasksPage = React.createClass({
                                 key={task.id}
                                 text={task.text}
                                 isCompleted={task.isCompleted}
-                                onStatusChange={this.handleStatusChange.bind(null, task.id)}
-                                onUpdate={this.handleTaskUpdate.bind(null, task.id)}
+                                 onStatusChange={this.handleStatusChange.bind(null, task.id)} 
+                                 onUpdate={this.handleTaskUpdate.bind(null, task.id)} 
                             />
                         )
                     }
