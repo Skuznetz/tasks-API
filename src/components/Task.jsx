@@ -48,6 +48,10 @@ const Task = React.createClass({
             this.cancelTask();
         }
     },
+        focusInput() {
+        this.input.focus();
+    },
+
     render(){
         return (
                 this.state.isEditing
