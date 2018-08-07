@@ -26,6 +26,24 @@ const Task = React.createClass({
     },
     render(){
         return (
+                this.state.isEditing
+            ?
+                <div className='Task editing'>
+                    <input
+                        className='Task__input'
+                        type='text'
+                        defaultValue={this.props.text}
+                        onKeyDown={this.handleKeyDown}
+                        ref={c => this.input = c}
+                    />
+                    <div className='Task__toolbar'>
+                        <div>
+                            <RaisedButton primary onClick={this.handleSave} label='Save' />
+                            <FlatButton onClick={this.handleCancel} label='Cancel' />
+                        </div>
+                    </div>
+                </div>
+            :
             <div className='Task'>
             <Checkbox className='Task__checkbox'
                       checked={this.props.isCompleted}
