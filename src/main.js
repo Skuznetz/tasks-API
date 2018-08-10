@@ -9,7 +9,6 @@ import LoggedInLayout from './components/LoggedInLayout.jsx';
 import api from './api';
 import TasksPage from './components/TasksPage.jsx';
 import TasklistsPage from './components/TasklistsPage.jsx';
-
 import App from './App.jsx';
 window.handleGoogleApiLoaded = () => {
     console.log('API loaded');
