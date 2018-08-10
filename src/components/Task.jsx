@@ -9,12 +9,11 @@ import RaisedButton from 'material-ui/lib/raised-button';
 
 import DeleteIcon from 'material-ui/lib/svg-icons/action/delete';
 import MoreVertIcon from 'material-ui/lib/svg-icons/navigation/more-vert';
+import './Task.less';
 
 const ENTER_KEY = 13;
 const ESC_KEY = 27;
 
-
-// import './Task.less';
 const Task = React.createClass({
      getInitialState() {
         return {
