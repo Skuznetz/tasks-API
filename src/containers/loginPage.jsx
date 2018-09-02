@@ -2,14 +2,18 @@ import React from 'react';
 
 import SessionStore from '../stores/SessionStore';
 import SessionActions from '../actions/SessionActions';
-import './LoginPage.less';
+import LoginPage from '../components/LoginPage.jsx';
+
 function getStateFromFlux() {
     return {
         isLoggedIn: SessionStore.isLoggedIn()
     };
 }
 
-const LoginPage = React.createClass({
+const LoginPageContainer = React.createClass({
+      contextTypes: {
+        router: React.PropTypes.object.isRequired
+    },
       getInitialState() {
         return getStateFromFlux();
     },
@@ -29,29 +33,24 @@ const LoginPage = React.createClass({
     handleLoginIn(){
                 SessionActions.authorize();
     },
+
+     redirectLoggedInUser() {
+        const { location } = this.props
+
+        if (location.state && location.state.nextPathname) {
+            this.context.router.replace(location.state.nextPathname);
+        } else {
+            this.context.router.replace('/lists');
+        }
+    },
+    
     render(){
         return (
-            <div className='LoginPage'>
-                <div className='LoginPage__banner'>
-                    <div className='LoginPage__text'>
-                        <h1>Serg task</h1>
-                        <p>123</p>
-                        <button 
-                            className='login-button'
-                            label='Log in'
-                            onClick={this.handleLogIn} />
-
-                    </div>
-                    <img
-                        src='/img/'
-                        className='LoginPage__image' />
-                </div>
-            </div>
-        );
-    },
+            <LoginPage onLogIn={this.handleLogIn} />
+        );},
      _onChange() {
         this.setState(getStateFromFlux());
     }
 });
 
-export default LoginPage;
+export default LoginPageContainer;
