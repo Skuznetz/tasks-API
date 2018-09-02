@@ -19,6 +19,7 @@ const TasklistsPage = React.createClass({
 
 
     render() {
+        // const { router } = this.context;
 
         return (
             <div className='TasklistsPage'>
