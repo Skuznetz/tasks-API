@@ -1,15 +1,8 @@
 import React from 'react';
 import TaskListsStore from '../stores/TaskListsStore';
 import TaskListsActions from '../actions/TaskListsActions';
-import List from 'material-ui/lib/lists/list';
-import ListItem from 'material-ui/lib/lists/list-item';
-import Divider from 'material-ui/lib/divider';
-import ListIcon from 'material-ui/lib/svg-icons/action/view-list';
-import HomeIcon from 'material-ui/lib/svg-icons/action/home';
-import ExitIcon from 'material-ui/lib/svg-icons/action/exit-to-app';
-import FolderIcon from 'material-ui/lib/svg-icons/file/folder';
-import AddIcon from 'material-ui/lib/svg-icons/content/add';
 import TaskListCreateModal from './TaskListCreateModal.jsx';
+import TasklistsPage from '../components/TasklistsPage.jsx';
 
 
 
