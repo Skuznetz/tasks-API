@@ -55,57 +55,16 @@ const TasklistsPage = React.createClass({
     },
 
     render() {
-        const { router } = this.context;
 
         return (
-            <div className='TasklistsPage'>
-                <div className='TasklistsPage__menu'>
-                    <List className='TasklistsPage__list'>
-                        <h3 className='TasklistsPage__title'>Serg Tasks</h3>
-                        <Divider />
-                        <List className='TasklistsPage__list'>
-                            <ListItem
-                                leftIcon={<HomeIcon />}
-                                primaryText="Home"
-                                onClick={router.push.bind(null, `/lists`)}
-                            />
-                            <ListItem
-                                leftIcon={<ListIcon />}
-                                primaryText="About"
-                                onClick={router.push.bind(null, `/about`)}
-                            />
-                        </List>
-                        <Divider />
-                        <List className='TasklistsPage__list' subheader="Task Lists">
-                            {
-                                this.state.taskLists.map(list =>
-                                    <ListItem
-                                        key={list.id}
-                                        leftIcon={<FolderIcon />}
-                                        primaryText={list.name}
-                                        onClick={router.push.bind(null, `/lists/${list.id}`)}
-                                    />
-                                )
-                            }
-                             <ListItem
-                                leftIcon={<AddIcon />}
-                                primaryText="Создадим новую задачу"
-                                onClick={this.handleAddTaskList}
-                            />
-                        </List>
-                        <Divider />
-                        <List className='TasklistsPage__list'>
-                            <ListItem
-                                leftIcon={<ExitIcon />}
-                                primaryText="Log out"
-                                onClick={this.handleLogOut}
-                            />
-                        </List>
-                    </List>
-                </div>
-                <div className='TasklistsPage__tasks'>
-                    {this.props.children}
-                </div>
+            <div>
+                   <TasklistsPage
+                    taskLists={this.state.taskLists}
+                    selectedListId={this.props.params.id}
+                    page={this.props.children}
+                    onAddTaskList={this.handleAddTaskList}
+                    onLogOut={this.onLogOut}
+                />
                  <TaskListCreateModal
                     isOpen={this.state.isCreatingTaskList}
                     onSubmit={this.handleTaskListSubmit}
@@ -119,4 +78,4 @@ const TasklistsPage = React.createClass({
     }
 });
 
-export default TasklistsPage;
+export default TasklistsPageContainer;
