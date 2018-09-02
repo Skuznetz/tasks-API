@@ -12,53 +12,14 @@ import Colors from 'material-ui/lib/styles/colors';
 
 import './TasklistsPage.less';
 
-function getStateFromFlux() {
-    return {
-        taskLists: TaskListsStore.getTaskLists()
-    };
-}
-
 const TasklistsPage = React.createClass({
     contextTypes: {
         router: React.PropTypes.object.isRequired
     },
 
-    getInitialState() {
-        return {
-            ...getStateFromFlux(),
-             isCreatingTaskList: false
 
-        };
-    },
-
-    componentWillMount() {
-        TaskListsActions.loadTaskLists();
-    },
-
-    componentDidMount() {
-        TaskListsStore.addChangeListener(this._onChange);
-    },
-
-    componentWillUnmount() {
-        TaskListsStore.removeChangeListener(this._onChange);
-    },
-
-      handleAddTaskList() {
-        this.setState({ isCreatingTaskList : true });
-    },
-
-    handleClose() {
-        this.setState({ isCreatingTaskList : false });
-    },
-
-    handleTaskListSubmit(taskList) {
-        TaskListsActions.createTaskList(taskList);
-
-        this.setState({ isCreatingTaskList : false });
-    },
 
     render() {
-        const { router } = this.context;
 
         return (
             <div className='TasklistsPage'>
@@ -106,19 +67,11 @@ const TasklistsPage = React.createClass({
                         </List>
                     </List>
                 </div>
-                <div className='TasklistsPage__tasks'>
-                    {this.props.children}
+                      <div className='TasklistsPage__tasks'>
+                    {this.props.page}
                 </div>
-                 <TaskListCreateModal
-                    isOpen={this.state.isCreatingTaskList}
-                    onSubmit={this.handleTaskListSubmit}
-                    onClose={this.handleClose}
-                />
             </div>
         );
-    },
-     _onChange() {
-        this.setState(getStateFromFlux());
     }
 });
 
