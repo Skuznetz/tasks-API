@@ -1,11 +1,10 @@
 import React from 'react';
 import TasksActions from '../actions/TasksActions';
-import TasksStore from '../stores/TaskStore';
 
-import IconButton from 'material-ui/lib/icon-button';
-import ContentAdd from 'material-ui/lib/svg-icons/content/add';
-import './TasksPage.less';
-import Task from './Task.jsx';
+
+import TasksPage from '../components/TasksPage.jsx';
+
+import TasksStore from '../stores/TaskStore';
 import TaskCreateModal from './TaskCreateModal.jsx';
 
 
@@ -14,11 +13,15 @@ import TaskCreateModal from './TaskCreateModal.jsx';
 
 function getStateFromFlux() {
     return {
-        tasks: TasksStore.getTasks()
+        tasks: TasksStore.getTasks(),
+       
     };
 }
 
-const TasksPage = React.createClass({
+const TasksPageContainer = React.createClass({
+     contextTypes: {
+        router: React.PropTypes.object.isRequired
+    },
     getInitialState() {
         return {
             ...getStateFromFlux(),
@@ -28,21 +31,25 @@ const TasksPage = React.createClass({
 
     componentWillMount() {
         TasksActions.loadTasks(this.props.params.id);
+
     },
 
     componentDidMount() {
         TasksStore.addChangeListener(this._onChange);
+
     },
 
     
     componentWillReceiveProps(nextProps) {
         if (this.props.params.id !== nextProps.params.id) {
             TasksActions.loadTasks(nextProps.params.id);
+
         }
     },
 
     componentWillUnmount() {
         TasksStore.removeChangeListener(this._onChange);
+
     },
 
       handleStatusChange(taskId, { isCompleted }) {
@@ -112,4 +119,4 @@ const TasksPage = React.createClass({
         this.setState(getStateFromFlux());
     }
 });
-export default TasksPage;
+export default TasksPageContainer;
