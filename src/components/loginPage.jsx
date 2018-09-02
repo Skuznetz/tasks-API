@@ -1,34 +1,10 @@
 import React from 'react';
 
-import SessionStore from '../stores/SessionStore';
-import SessionActions from '../actions/SessionActions';
 import './LoginPage.less';
-function getStateFromFlux() {
-    return {
-        isLoggedIn: SessionStore.isLoggedIn()
-    };
-}
+
 
 const LoginPage = React.createClass({
-      getInitialState() {
-        return getStateFromFlux();
-    },
-    componentDidMount() {
-        SessionStore.addChangeListener(this._onChange);
-    },
-
-    componentWillUpdate(nextProps, nextState) {
-        if (nextState.isLoggedIn) {
-            this.contex.router.replace('/about');  
-        }
-    },
-
-    componentWillUnmount() {
-        SessionStore.removeChangeListener(this._onChange);
-    },
-    handleLoginIn(){
-                SessionActions.authorize();
-    },
+    
     render(){
         return (
             <div className='LoginPage'>
@@ -48,9 +24,6 @@ const LoginPage = React.createClass({
                 </div>
             </div>
         );
-    },
-     _onChange() {
-        this.setState(getStateFromFlux());
     }
 });
 
