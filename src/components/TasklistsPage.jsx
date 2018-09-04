@@ -8,7 +8,7 @@ import HomeIcon from 'material-ui/lib/svg-icons/action/home';
 import ExitIcon from 'material-ui/lib/svg-icons/action/exit-to-app';
 import FolderIcon from 'material-ui/lib/svg-icons/file/folder';
 import AddIcon from 'material-ui/lib/svg-icons/content/add';
-
+import Colors from 'material-ui/lib/styles/colors';
 import './TasklistsPage.less';
 
 const TasklistsPage = React.createClass({
@@ -19,7 +19,7 @@ const TasklistsPage = React.createClass({
 
 
     render() {
-        // const { router } = this.context;
+         const { router } = this.context;
 
         return (
             <div className='TasklistsPage'>
@@ -46,6 +46,13 @@ const TasklistsPage = React.createClass({
                                     <ListItem
                                         key={list.id}
                                         leftIcon={<FolderIcon />}
+                                        style={
+                                            this.props.selectedListId === list.id 
+                                            ? 
+                                                {backgroundColor: 'rgba(0,0,0,0,.1'}
+                                            :
+                                                null
+                                        }
                                         primaryText={list.name}
                                         onClick={router.push.bind(null, `/lists/${list.id}`)}
                                     />
@@ -54,7 +61,7 @@ const TasklistsPage = React.createClass({
                              <ListItem
                                 leftIcon={<AddIcon />}
                                 primaryText="Создадим новую задачу"
-                                onClick={this.handleAddTaskList}
+                                onClick={this.handleonAddTaskList}
                             />
                         </List>
                         <Divider />
@@ -62,13 +69,13 @@ const TasklistsPage = React.createClass({
                             <ListItem
                                 leftIcon={<ExitIcon />}
                                 primaryText="Log out"
-                                onClick={this.handleLogOut}
+                                onClick={this.handleonLogOut}
                             />
                         </List>
                     </List>
                 </div>
                       <div className='TasklistsPage__tasks'>
-                    {this.props.children}
+                    {this.props.page}
                 </div>
             </div>
         );
