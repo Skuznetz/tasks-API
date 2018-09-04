@@ -7,7 +7,7 @@ import TasklistsPage from '../components/TasklistsPage.jsx';
 
 
 
-import './TasklistsPage.less';
+// import './TasklistsPage.less';
 
 function getStateFromFlux() {
     return {
@@ -15,7 +15,7 @@ function getStateFromFlux() {
     };
 }
 
-const TasklistsPage = React.createClass({
+const TasklistsPageContainer = React.createClass({
     contextTypes: {
         router: React.PropTypes.object.isRequired
     },
