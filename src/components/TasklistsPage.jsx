@@ -61,7 +61,7 @@ const TasklistsPage = React.createClass({
                              <ListItem
                                 leftIcon={<AddIcon />}
                                 primaryText="Создадим новую задачу"
-                                onClick={this.handleonAddTaskList}
+                                onClick={this.props.onAddTaskList}
                             />
                         </List>
                         <Divider />
@@ -69,7 +69,7 @@ const TasklistsPage = React.createClass({
                             <ListItem
                                 leftIcon={<ExitIcon />}
                                 primaryText="Log out"
-                                onClick={this.handleonLogOut}
+                                onClick={this.props.onLogOut}
                             />
                         </List>
                     </List>
