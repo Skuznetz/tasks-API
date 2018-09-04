@@ -1,10 +1,13 @@
 import React from 'react';
 import TasksActions from '../actions/TasksActions';
+import TaskListsActions from '../actions/TaskListsActions';
 
 
 import TasksPage from '../components/TasksPage.jsx';
 
 import TasksStore from '../stores/TaskStore';
+import TaskListsStore from '../stores/TaskListsStore';
+
 import TaskCreateModal from './TaskCreateModal.jsx';
 
 
@@ -14,7 +17,7 @@ import TaskCreateModal from './TaskCreateModal.jsx';
 function getStateFromFlux() {
     return {
         tasks: TasksStore.getTasks(),
-       
+        // taskList: TaskListsStore.getCurrentTaskList() || {}
     };
 }
 
@@ -31,25 +34,25 @@ const TasksPageContainer = React.createClass({
 
     componentWillMount() {
         TasksActions.loadTasks(this.props.params.id);
-
+        // TaskListsActions.loadTaskList(this.props.params.id);
     },
 
     componentDidMount() {
         TasksStore.addChangeListener(this._onChange);
-
+        // TaskListsStore.addChangeListener(this._onChange);
     },
 
     
     componentWillReceiveProps(nextProps) {
         if (this.props.params.id !== nextProps.params.id) {
             TasksActions.loadTasks(nextProps.params.id);
-
+            // TaskListsActions.loadTaskList(nextProps.params.id);
         }
     },
 
     componentWillUnmount() {
         TasksStore.removeChangeListener(this._onChange);
-
+        // TaskListsStore.removeChangeListener(this._onChange);
     },
 
       handleStatusChange(taskId, { isCompleted }) {
