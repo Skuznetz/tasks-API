@@ -5,7 +5,7 @@ import React from 'react';
 import IconButton from 'material-ui/lib/icon-button';
 import ContentAdd from 'material-ui/lib/svg-icons/content/add';
 import './TasksPage.less';
-// import Task from './Task.jsx';
+import Task from './Task.jsx';
 // import TaskCreateModal from './TaskCreateModal.jsx';
 
 const TasksPage = React.createClass({
@@ -33,10 +33,7 @@ const TasksPage = React.createClass({
                         <Task
                             key={task.id}
                             text={task.text}
-                            
-                            
                             isCompleted={task.isCompleted}
-                        
                             onStatusChange={this.props.onTaskStatusChange.bind(null, task.id)}
                             onUpdate={this.props.onTaskUpdate.bind(null, task.id)}
                         />
