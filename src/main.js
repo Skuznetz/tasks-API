@@ -6,7 +6,7 @@ import SessionStore from './stores/SessionStore';
 import LoginPage from './containers/loginPage.jsx';
 import AboutPage from './components/AboutPage.jsx';
 import LoggedInLayout from './components/LoggedInLayout.jsx';
-// import api from './api';
+import api from './api';
 import TasksPage from './containers/TasksPage.jsx';
 import TasklistsPage from './components/TasklistsPage.jsx';
 import App from './App.jsx';
