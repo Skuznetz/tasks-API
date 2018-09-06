@@ -1,7 +1,7 @@
 import React from 'react';
 import TaskListsStore from '../stores/TaskListsStore';
 import TaskListsActions from '../actions/TaskListsActions';
-import TaskListCreateModal from './TaskListCreateModal.jsx';
+import TaskListCreateModal from '../components/TaskListCreateModal.jsx';
 import TasklistsPage from '../components/TasklistsPage.jsx';
 
 
