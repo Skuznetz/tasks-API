@@ -8,13 +8,6 @@ import './TasksPage.less';
 // import Task from './Task.jsx';
 // import TaskCreateModal from './TaskCreateModal.jsx';
 
-
-
-
-
-
-    
-
 const TasksPage = React.createClass({
     getInitialState() {
         return {
@@ -34,8 +27,22 @@ const TasksPage = React.createClass({
                         </IconButton>
                     </div>
                 </div>
-                 
-                
+                 <div className='TaskPage__tasks'>
+                     {
+                          this.props.tasks.map(task =>
+                        <Task
+                            key={task.id}
+                            text={task.text}
+                            
+                            
+                            isCompleted={task.isCompleted}
+                        
+                            onStatusChange={this.props.onTaskStatusChange.bind(null, task.id)}
+                            onUpdate={this.props.onTaskUpdate.bind(null, task.id)}
+                        />
+                    )   
+                     }
+                </div>
        </div> 
       );
    }
