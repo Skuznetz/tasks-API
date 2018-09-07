@@ -1,7 +1,7 @@
 import React from 'react';
 import TasksActions from '../actions/TasksActions';
 // import TaskListsActions from '../actions/TaskListsActions';
-import Task from '../components/Task.jsx';
+// import Task from '../components/Task.jsx';
 
 
 import TasksPage from '../components/TasksPage.jsx';
