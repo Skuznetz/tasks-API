@@ -8,6 +8,11 @@ import './TasksPage.less';
 import Task from './Task.jsx';
 import TaskCreateModal from './TaskCreateModal.jsx';
 
+function getStateFromFlux() {
+    return {
+        tasks: TasksStore.getTasks(),
+    };
+}
 const TasksPage = React.createClass({
     getInitialState() {
         return {
