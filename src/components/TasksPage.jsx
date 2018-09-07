@@ -14,6 +14,10 @@ function getStateFromFlux() {
     };
 }
 const TasksPage = React.createClass({
+    contextTypes: {
+        router: React.PropTypes.object.isRequired
+    },
+
     getInitialState() {
         return {
             ...getStateFromFlux(),
