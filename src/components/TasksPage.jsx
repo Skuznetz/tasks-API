@@ -106,7 +106,11 @@ const TasksPage = React.createClass({
                 </div>
        </div> 
       );
-   }
+   },
+    _onChange() {
+        this.setState(getStateFromFlux());
+    }
+
     
 });
 export default TasksPage;
