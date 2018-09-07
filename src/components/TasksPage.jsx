@@ -101,9 +101,15 @@ const TasksPage = React.createClass({
                             onStatusChange={this.props.onTaskStatusChange.bind(null, task.id)}
                             onUpdate={this.props.onTaskUpdate.bind(null, task.id)}
                         />
+                
                     )   
                      }
                 </div>
+                         <TaskCreateModal
+                            isOpen={this.state.isCreatingTask}
+                            onSubmit={this.handleTaskSubmit}
+                            onClose={this.handleClose}
+                />
        </div> 
       );
    },
