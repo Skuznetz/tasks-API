@@ -1,12 +1,12 @@
 import React from 'react';
-// import TasksActions from '../actions/TasksActions';
-// import TasksStore from '../stores/TaskStore';
+import TasksActions from '../actions/TasksActions';
+import TasksStore from '../stores/TaskStore';
 
 import IconButton from 'material-ui/lib/icon-button';
 import ContentAdd from 'material-ui/lib/svg-icons/content/add';
 import './TasksPage.less';
 import Task from './Task.jsx';
-// import TaskCreateModal from './TaskCreateModal.jsx';
+import TaskCreateModal from './TaskCreateModal.jsx';
 
 const TasksPage = React.createClass({
     getInitialState() {
