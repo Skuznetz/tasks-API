@@ -77,7 +77,7 @@ const Task = React.createClass({
                     />
                     <div className='Task__toolbar'>
                         <div>
-                            <RaisedButton primary onClick={this.handleSave} label='Save' />
+                             <RaisedButton primary onClick={this.handleSave} label='Save' /> 
                             <FlatButton onClick={this.handleCancel} label='Cancel' />
                         </div>
                     </div>

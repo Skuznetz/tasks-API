@@ -34,6 +34,8 @@ const TasksStore = Object.assign({}, EventEmitter.prototype, {
 
     removeChangeListener(callback) {
         this.removeListener(CHANGE_EVENT, callback);
+    
+    
     }
 });
 
