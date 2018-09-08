@@ -81,4 +81,4 @@ const LoginPage = React.createClass({
     }
 });
 
-export default LoginPage
+export default LoginPage;
