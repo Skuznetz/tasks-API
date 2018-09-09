@@ -3,7 +3,7 @@ import React from 'react';
 import SessionStore from '../stores/SessionStore';
 import SessionActions from '../actions/SessionActions';
 
-import RaisedButton from 'material-ui/lib/raised-button';
+// import RaisedButton from 'material-ui/lib/raised-button';
 
 import './LoginPage.less';
 
@@ -61,11 +61,11 @@ const LoginPage = React.createClass({
                     <div className='LoginPage__text'>
                         <h1>Almost Google tasks</h1>
                         <p>Organise your life!</p>
-                        <RaisedButton
+                        <button
                             className='login-button'
                             label='Log in with Google'
                             onClick={this.handleLogIn}
-                        />
+                        ></button>
                     </div>
                     <img
                         src='/img/desk.png'
