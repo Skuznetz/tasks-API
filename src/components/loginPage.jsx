@@ -61,11 +61,11 @@ const LoginPage = React.createClass({
                     <div className='LoginPage__text'>
                         <h1>Almost Google tasks</h1>
                         <p>Organise your life!</p>
-                        <button
+                        <RaisedButton
                             className='login-button'
                             label='Log in with Google'
                             onClick={this.handleLogIn}
-                        ></button>
+                        ></RaisedButton>
                     </div>
                     <img
                         src='/img/desk.png'
