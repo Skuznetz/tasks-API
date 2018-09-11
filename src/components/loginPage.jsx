@@ -3,7 +3,7 @@ import React from 'react';
 import SessionStore from '../stores/SessionStore';
 import SessionActions from '../actions/SessionActions';
 
-// import RaisedButton from 'material-ui/lib/raised-button';
+ import RaisedButton from 'material-ui/lib/raised-button';
 
 import './LoginPage.less';
 
