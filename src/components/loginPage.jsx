@@ -59,7 +59,7 @@ const LoginPage = React.createClass({
             <div className='LoginPage'>
                 <div className='LoginPage__banner'>
                     <div className='LoginPage__text'>
-                        <h1>Almost Google tasks</h1>
+                        <h1>Serg task</h1>
                         <p>Organise your life!</p>
                         <RaisedButton
                             className='login-button'
