@@ -67,7 +67,7 @@ const TasklistsPage = React.createClass({
             <div className='TasklistsPage'>
                 <div className='TasklistsPage__menu'>
                     <List className='TasklistsPage__list'>
-                        <h3 className='TasklistsPage__title'>Almost Google Tasks</h3>
+                        <h3 className='TasklistsPage__title'>Serg task</h3>
                         <Divider />
                         <List className='TasklistsPage__list'>
                             <ListItem
