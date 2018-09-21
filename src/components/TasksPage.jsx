@@ -9,7 +9,7 @@ import ContentAdd from 'material-ui/lib/svg-icons/content/add';
 import Task from './Task.jsx';
 import TaskCreateModal from './TaskCreateModal.jsx';
 
-import './TasksPage.less';
+// import './TasksPage.less';
 
 function getStateFromFlux() {
     return {
